@@ -1,0 +1,5 @@
+D:\Projects\BaiTap\ThayKhang\Bai147\Bai147\bin\Debug\Bai147.exe.config
+D:\Projects\BaiTap\ThayKhang\Bai147\Bai147\bin\Debug\Bai147.exe
+D:\Projects\BaiTap\ThayKhang\Bai147\Bai147\bin\Debug\Bai147.pdb
+D:\Projects\BaiTap\ThayKhang\Bai147\Bai147\obj\Debug\Bai147.exe
+D:\Projects\BaiTap\ThayKhang\Bai147\Bai147\obj\Debug\Bai147.pdb

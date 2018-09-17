@@ -1,0 +1,6 @@
+D:\Projects\BaiTap\ThayKhang\Bai169\Bai169\bin\Debug\Bai169.exe.config
+D:\Projects\BaiTap\ThayKhang\Bai169\Bai169\bin\Debug\Bai169.exe
+D:\Projects\BaiTap\ThayKhang\Bai169\Bai169\bin\Debug\Bai169.pdb
+D:\Projects\BaiTap\ThayKhang\Bai169\Bai169\obj\Debug\Bai169.csprojResolveAssemblyReference.cache
+D:\Projects\BaiTap\ThayKhang\Bai169\Bai169\obj\Debug\Bai169.exe
+D:\Projects\BaiTap\ThayKhang\Bai169\Bai169\obj\Debug\Bai169.pdb

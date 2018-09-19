@@ -4,48 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bai165
+namespace Bai192
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[] arr = new int[] { 2288, -3346, 2334, -938, 223, 123 };
-            Console.WriteLine(DauLeDauTien(arr));
+            int[] arr = new int[] { 35, 500, 256, 258, -800, 4, 15, 22, 39, 56 };
+            LietKeChandau(arr);
+            //Console.WriteLine(CheckChanDau(-800));
             Console.ReadLine();
         }
 
-        public static int DauLeDauTien(int[] arr) {
+        public static void LietKeChandau(int[] arr)
+        {
             for (int i = 0; i < arr.Length; i++)
-
             {
-                if (KiemTraLeDau(arr[i]) == true)
+                if (CheckChanDau(arr[i]) == true)
                 {
-                    return arr[i];
+                    Console.WriteLine(arr[i]);
                 }
             }
-            return 0;
         }
-
-        public static bool KiemTraLeDau(int number)
+        public static bool CheckChanDau(int number)
         {
-            int ledau = 0;
             int temp = Math.Abs(number);
+            int chanDau = temp;
             while (temp >= 10)
             {
-                ledau = temp /= 10;
+                chanDau = temp / 10;
+                temp /= 10;
             }
-
-            if (ledau % 2 != 0)
+            if (chanDau % 2 == 0)
             {
                 return true;
             }
             return false;
         }
-
-         
-
-
-
     }
 }

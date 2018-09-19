@@ -8,6 +8,7 @@ namespace Bai191
         {
             float[] arr = new float[] { 2, 3, 2, 5, 28, 3, 6, 3, 15, 8, 29, 5 };
             LietKeMax(arr);
+            Console.ReadLine();
         }
 
         public static void LietKeMax(float[] arr)

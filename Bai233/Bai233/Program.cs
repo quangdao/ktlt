@@ -17,7 +17,7 @@ namespace Bai233
             {
                 if (CheckTrung(arr,i) == false)
                 {
-                    Console.WriteLine("{0}: {1}",arr[i],CountNumber(arr,arr[i]));
+                    Console.WriteLine("Value ({0}): {1} time(s)",arr[i],CountNumber(arr,arr[i]));
                     //Console.WriteLine(arr[i]);
                 }
             }

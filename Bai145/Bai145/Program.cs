@@ -36,19 +36,17 @@ namespace Bai145
 
         public static bool kiemtrasohoanthien(int number)
         {
-            List<int> list = new List<int>();
-            for (int i = 1; i <= number; i++)
+            int sum = 0;
+            for (int i = 1; i < number; i++)
             {
-                if (number % i == 0 && number != i) {
-                    list.Add(i);
+                if (number % i == 0)
+                {
+                    sum += i;
                 }
             }
-
-            for (int j = 0; j < list.Count; j++)
+            if (sum == number)
             {
-                if (list.Sum() == number) {
-                    return true;
-                }
+                return true;
             }
             return false;
         }

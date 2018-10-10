@@ -18,13 +18,15 @@ namespace Bai148
 
         public static int songuyentocuoi(int[] arr)
         {
-            int nguyentocuoi = -1;
-            for (int i = 0; i < arr.Length; i++)
+            
+            for (int i = arr.Length - 1; i >= 0; i--)
             {
                 if (kiemtranguyento(arr[i]) == true)
-                    nguyentocuoi = arr[i];
+                {
+                    return arr[i];
+                }
             }
-            return nguyentocuoi;
+            return -1;
         }
 
         public static bool kiemtranguyento(int number)
@@ -34,7 +36,7 @@ namespace Bai148
 
             if (number <= 1)
             {
-                return result = false;
+                return result;
             }
             for (int i = 1; i <= number; i++)
             {

@@ -17,13 +17,12 @@ namespace Bai255
 
 
 
-        public static void Swap(float numberA, float numberB )
+        public static void Swap(ref float numberA, ref float numberB )
         {
             float temp = numberA;
             numberA = numberB;
             numberB = temp;
         }
-       
 
         public static void DescendingArray(float[] arr)
         {
@@ -33,9 +32,7 @@ namespace Bai255
                 {
                     if (arr[i] > arr[j])
                     {
-                        float temp = arr[i];
-                        arr[i] = arr[j];
-                        arr[j] = temp;
+                        Swap(ref arr[i], ref arr[j]);
                     }
                 }
             }
@@ -44,5 +41,6 @@ namespace Bai255
                 Console.WriteLine(arr[i]);
             }
         }
+
     }
 }

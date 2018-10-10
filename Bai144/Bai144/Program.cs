@@ -11,11 +11,11 @@ namespace Bai144
         static void Main(string[] args)
         {
             int[] arr = new int[] {1, 0, 0 };
-            Console.WriteLine(songuyentodautien(arr));
+            Console.WriteLine(TimSoNguyenToDauTien(arr));
             Console.ReadLine();
         }
 
-        public static int songuyentodautien(int[] arr)
+        public static int TimSoNguyenToDauTien(int[] arr)
         {
             int nguyentodau = -1;
             for (int i = 0; i < arr.Length; i++)

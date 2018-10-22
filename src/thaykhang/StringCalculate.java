@@ -16,149 +16,33 @@ public class StringCalculate {
 	
 	
 	
-//	public static String Plus2Strings(String strA, String strB)
-//	{
-//
-//		int lengthA = strA.length();
-//		int lengthB = strB.length();
-//		int lengthOfResult = 0;
-//		
-//		if ( lengthA > lengthB) {
-//			lengthOfResult = strA.length();
-//			for (int i = 0; i < lengthA - lengthB ; i++) {
-//				strB = "0" + strB;
-//			}
-//		}
-//		else {
-//			lengthOfResult = strB.length();
-//			for (int i = 0; i < lengthB - lengthA; i++) {
-//				strA = "0" + strA;
-//			}
-//		}
-//		int tempStrA = 0;
-//		int tempStrB = 0;
-//		int remain = 0;
-//		String result = new String("");
-//		for (int i = lengthOfResult - 1; i >= 0; i--) 
-//		{
-//			tempStrA = strA.charAt(i) - '0';
-//			tempStrB = strB.charAt(i) - '0';
-//			int tempInt = tempStrA + tempStrB + remain;
-//			if (tempInt >= 10) {
-//				remain = 1;
-//				result =  tempInt % 10 + result ;
-//			}
-//			else {
-//				result =  tempInt + result;
-//				remain = 0;
-//			}
-//		}
-//		if (remain != 0) {
-//			result = remain + result;
-//		}
-//		return  result;
-//	}
-//	
-	
-//	public static String Minus2Strings(String strA, String strB)
-//	{
-//		
-//		strA = ClearString(strA);
-//		strB = ClearString(strB);
-//		String result = new String("");
-//		String greater = new String("");
-//		String lower = new String("");
-//		
-//		if (IsGreaterString(strA,strB) == true) {
-//			greater = strA;
-//			lower = FillString(strB, greater.length() - strB.length());
-//		}
-//		else {
-//			greater = strB;
-//			//result = result = "-";
-//			lower = FillString(strA, greater.length() - strA.length());
-//		}
-//		
-//		int lengthOfResult = greater.length();
-//		int tempStrGreater = 0;
-//		int tempStrLower = 0;
-//		int remain = 0;
-//		
-//		for (int i = lengthOfResult - 1; i >= 0; i--) 
-//		{
-//			tempStrGreater = greater.charAt(i) - '0';
-//			tempStrLower = lower.charAt(i) - '0';
-//			int temp = 0;
-//			if (tempStrGreater < tempStrLower ) {
-//				temp = (tempStrGreater + 10) - tempStrLower - remain;
-//				result =  temp + result;
-//				remain = 1;
-//			}
-//			else {
-//				temp = tempStrGreater - tempStrLower - remain;
-//				result = temp + result;
-//				remain = 0;
-//			}
-//		}
-//		
-//		if (greater != strA) {
-//			result = "-" + result;
-//		}
-//		return  result;
-//	}
-	public static void main(String[] args) {
-		
-		System.out.print(PlusTwoStrings("45","17"));
-		//System.out.print(GreaterString("-610","-610"));
-//System.out.print(ClearString("0-0-0-0-0-0-0-00000----000000003870"));
 
+public static void main(String[] args) {
+		
+		System.out.print(PlusTwoStrings("999","6552"));
+		
 	}	
 	public static String PlusTwoStrings(String strA, String strB) 
 	{
-		strA = ClearString(strA);
-		strB = ClearString(strB);
-		
-		String result = new String("");
-		String greater = GreaterString(strA, strB);
-		String lower = strB;
-		
-		int top = 0;
-		int bottom = 0;
-		int remain = 0;
-		int temp = 0;
-		
- 		if (greater != strA) 
-			lower = strA;
- 		int stringLengthGap  = greater.length() - lower.length();
-//		if (stringLengthGap == 0 ) 
-//		{
-//			for (int i = greater.length() - 1 ; i >= 0 ; i--)
-//			{
-//				int tempIntTop = (greater.charAt(i) - '0');
-//				int tempIntBottom = (lower.charAt(i) - '0');
-//				temp = tempIntTop + tempIntBottom + remain;
-//				if (temp >= 10) 
-//				{
-//					result =  (temp % 10) + result;
-//					remain = 1;
-//				}
-//				else 
-//				{
-//					result =   temp + result;
-//					remain = 0;
-//				}
-//					
-//			}
-//			if (remain == 0)
-//				return result;
-//			else 
-//				result = remain + result;
-//		}
-		//!= Length
-		//else if (stringLengthGap != 0) {
+			strA = ClearString(strA);
+			strB = ClearString(strB);
+			
+			String result = new String("");
+			String greater = GreaterString(strA, strB);
+			String lower = strB;
+			
+			int top = 0;
+			int bottom = 0;
+			int remain = 0;
+			int temp = 0;
+			
+	 		if (greater != strA) 
+				lower = strA;
+	 		
+	 		int stringLengthGap  = greater.length() - lower.length();
 			top = greater.length() - 1;
 			bottom = lower.length() - 1; 
-			
+				
 			for (int i =  top ; i >= stringLengthGap; i--) {
 				int tempIntTop = (greater.charAt(i) - '0');
 				int tempIntBottom = (lower.charAt(i - stringLengthGap) - '0');
@@ -174,29 +58,98 @@ public class StringCalculate {
 					remain = 0;
 				}
 			}
+			
 			for (int i = stringLengthGap - 1; i >= 0; i--) {
-				if (remain == 0)
-					 result = (greater.charAt(i) - '0') + result;
-				else 
+				 temp = greater.charAt(i) - '0' + remain;
+				
+				if (temp >= 10) 
+				{
+					result = temp % 10 + result;
+					remain = 1;
+				}
+				else
 				{ 
-					result = (greater.charAt(i) - '0' + remain) + result;
+					result = temp + result;
 					remain = 0;
 				}
 			}
-		//}
+			
 			if (remain == 0)
 				return result;
 			else 
 				result = remain + result;
+			
 		return result;
-}
+	}
 	
+	public static String MinusTwoStrings(String strA, String strB) 
+	{
+			strA = ClearString(strA);
+			strB = ClearString(strB);
+			
+			String result = new String("");
+			String greater = GreaterString(strA, strB);
+			String lower = strB;
+			
+			int top = 0;
+			int bottom = 0;
+			int remain = 0;
+			int temp = 0;
+			
+	 		if (greater != strA) 
+				lower = strA;
+	 		
+	 		int stringLengthGap  = greater.length() - lower.length();
+			top = greater.length() - 1;
+			bottom = lower.length() - 1; 
+				
+			for (int i =  top ; i >= stringLengthGap; i--) {
+				int tempIntTop = (greater.charAt(i) - '0');
+				int tempIntBottom = (lower.charAt(i - stringLengthGap) - '0');
+				temp = tempIntTop - tempIntBottom;
+				if (temp < 0) 
+				{
+					result =  ((tempIntTop + 10) - tempIntBottom - remain)  % 10 + result;
+					remain = 1;
+				}
+				else 
+				{
+					result =   (tempIntTop - tempIntBottom - remain)  + result;
+					remain = 0;
+				}
+			}
+			
+			for (int i = stringLengthGap - 1; i >= 0; i--) {
+				temp = greater.charAt(i) - '0' - remain;
+				
+				if (temp < 0) 
+				{
+					result = ((greater.charAt(i) - '0' + 10)  - remain) % 10 + result;
+					remain = 1;
+				}
+				else
+				{ 
+					result = (greater.charAt(i) - '0' - remain ) + result;
+					remain = 0;
+				}
+			}
+			return ClearString(result);
+	}
+		
 	public static String ClearString(String str)
 	{
 		String result = new String("");
 		boolean IsNegative = false;
 		boolean IsClean = true;
+		boolean IsZero = true;
+		
 		int lastZero = 0;
+		
+		for (int i = 0; i < str.length(); i++) {
+			if (str.charAt(i) - '0' != 0) {
+				IsZero = false;
+			}
+		}
 		
 		for (int i = 0; i < str.length(); i++) {
 			if (Character.toString(str.charAt(i)).equals("0") == true) 
@@ -211,10 +164,13 @@ public class StringCalculate {
 			else
 				break;
 		}
+		
 		if (IsNegative == true) 
 			result = "-" + result;
 		else if(IsClean == true)
 			return result = str;
+		else if(IsZero == true)
+			return result = "0";
 		
 		//build string if fault string detected
 		for (int i = lastZero + 1; i < str.length() ; i++) {
@@ -223,7 +179,7 @@ public class StringCalculate {
 		return result;
 		
 	}
-	
+		
 	public static String FillString(String str, int gap) {
 		
 		String result = new String("");
@@ -286,13 +242,12 @@ public class StringCalculate {
 				
 			}
 		} 
-
+	
 		if (flag == true) {
 			return strGreater;
 		}
 		else
 			return strLower;
-		
 	}
 	
 	
